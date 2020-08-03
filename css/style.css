@@ -654,7 +654,12 @@ height: 200px; }
 
 @media (max-width: 991.98px) {
 	.retro-layout-2 .img-1 {
-height: 200px; } }
+height: 200px; }
+.site-navbar {
+	padding-top: 17px;
+	padding-bottom: 17px;
+}
+}
 
 .retro-layout-2 .h-entry {
 	display: block;
