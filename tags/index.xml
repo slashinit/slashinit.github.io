@@ -6,9 +6,46 @@
     <description>Recent content in Tags on SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 08 Aug 2020 18:47:07 +0530</lastBuildDate>
     
 	<atom:link href="https://slashinit.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ARM</title>
+      <link>https://slashinit.github.io/tags/arm/</link>
+      <pubDate>Sat, 08 Aug 2020 18:47:07 +0530</pubDate>
+      
+      <guid>https://slashinit.github.io/tags/arm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assembly</title>
+      <link>https://slashinit.github.io/tags/assembly/</link>
+      <pubDate>Sat, 08 Aug 2020 18:47:07 +0530</pubDate>
+      
+      <guid>https://slashinit.github.io/tags/assembly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microcontrollers</title>
+      <link>https://slashinit.github.io/tags/microcontrollers/</link>
+      <pubDate>Sat, 08 Aug 2020 18:47:07 +0530</pubDate>
+      
+      <guid>https://slashinit.github.io/tags/microcontrollers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microprocessors</title>
+      <link>https://slashinit.github.io/tags/microprocessors/</link>
+      <pubDate>Sat, 08 Aug 2020 18:47:07 +0530</pubDate>
+      
+      <guid>https://slashinit.github.io/tags/microprocessors/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
