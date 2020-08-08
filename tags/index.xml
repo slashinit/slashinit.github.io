@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking</title>
-    <link>https://slashinit.github.io/tags/</link>
+    <link>https://www.slashinit.org/tags/</link>
     <description>Recent content in Tags on SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 08 Aug 2020 18:47:07 +0530</lastBuildDate>
     
-	<atom:link href="https://slashinit.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.slashinit.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ARM</title>
-      <link>https://slashinit.github.io/tags/arm/</link>
+      <link>https://www.slashinit.org/tags/arm/</link>
       <pubDate>Sat, 08 Aug 2020 18:47:07 +0530</pubDate>
       
-      <guid>https://slashinit.github.io/tags/arm/</guid>
+      <guid>https://www.slashinit.org/tags/arm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Assembly</title>
-      <link>https://slashinit.github.io/tags/assembly/</link>
+      <link>https://www.slashinit.org/tags/assembly/</link>
       <pubDate>Sat, 08 Aug 2020 18:47:07 +0530</pubDate>
       
-      <guid>https://slashinit.github.io/tags/assembly/</guid>
+      <guid>https://www.slashinit.org/tags/assembly/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Microcontrollers</title>
-      <link>https://slashinit.github.io/tags/microcontrollers/</link>
+      <link>https://www.slashinit.org/tags/microcontrollers/</link>
       <pubDate>Sat, 08 Aug 2020 18:47:07 +0530</pubDate>
       
-      <guid>https://slashinit.github.io/tags/microcontrollers/</guid>
+      <guid>https://www.slashinit.org/tags/microcontrollers/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Microprocessors</title>
-      <link>https://slashinit.github.io/tags/microprocessors/</link>
+      <link>https://www.slashinit.org/tags/microprocessors/</link>
       <pubDate>Sat, 08 Aug 2020 18:47:07 +0530</pubDate>
       
-      <guid>https://slashinit.github.io/tags/microprocessors/</guid>
+      <guid>https://www.slashinit.org/tags/microprocessors/</guid>
       <description></description>
     </item>
     
