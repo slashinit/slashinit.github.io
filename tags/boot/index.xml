@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Boot on SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking</title>
+    <link>https://www.slashinit.com/tags/boot/</link>
+    <description>Recent content in Boot on SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Jan 2022 22:00:22 +0530</lastBuildDate>
+    
+	<atom:link href="https://www.slashinit.com/tags/boot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installing DHCP, TFTP and NFS servers - Complete network boot setup</title>
+      <link>https://www.slashinit.com/posts/installing-dhcp-tftp-nfs-network-boot/</link>
+      <pubDate>Sun, 16 Jan 2022 22:00:22 +0530</pubDate>
+      
+      <guid>https://www.slashinit.com/posts/installing-dhcp-tftp-nfs-network-boot/</guid>
+      <description>Step by step guide to install dhcp, tftp and nfs servers on a linux host</description>
+    </item>
+    
+  </channel>
+</rss>

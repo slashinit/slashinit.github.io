@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head itemscope itemtype="https://www.slashinit.com/">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title itemprop="name">Building QEMU from source | SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking</title>
+		
+<meta property="og:title" content="Building QEMU from source | SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking" />
+<meta name="twitter:title" content="Building QEMU from source | SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking" />
+<meta itemprop="name" content="Building QEMU from source | SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking" />
+<meta name="application-name" content="Building QEMU from source | SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking" />
+<meta property="og:site_name" content="SlashInit" />
+
+<meta name="description" content="Step by step guide to build qemu from source on your linux host machine" />
+<meta itemprop="description" content="Step by step guide to build qemu from source on your linux host machine" />
+<meta property="og:description" content="Step by step guide to build qemu from source on your linux host machine" />
+<meta name="twitter:description" content="Step by step guide to build qemu from source on your linux host machine" />
+<meta name="twitter:card" content="Step by step guide to build qemu from source on your linux host machine">
+
+<base href="https://www.slashinit.com/posts/building-qemu-from-source/">
+<link rel="canonical" href="https://www.slashinit.com/posts/building-qemu-from-source/" itemprop="url" />
+<meta name="url" content="https://www.slashinit.com/posts/building-qemu-from-source/" />
+<meta name="twitter:url" content="https://www.slashinit.com/posts/building-qemu-from-source/" />
+<meta property="og:url" content="https://www.slashinit.com/posts/building-qemu-from-source/" />
+
+<meta property="og:locale" content="en">
+<meta name="language" content="Global">
+<link rel="alternate" hreflang="en" href="https://www.slashinit.com/posts/building-qemu-from-source/" title="Global">
+
+
+
+<meta itemprop="image" content="https://www.slashinit.com/posts/building-qemu-from-source//images/qemu.jpg" />
+<meta property="og:image" content="https://www.slashinit.com/posts/building-qemu-from-source//images/qemu.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@SlashInit" />
+<meta name="twitter:image" content="https://www.slashinit.com/posts/building-qemu-from-source//images/qemu.jpg" />
+<meta name="twitter:image:src" content="https://www.slashinit.com/posts/building-qemu-from-source//images/qemu.jpg" />
+
+
+<meta property="og:updated_time" content=2022-01-05T22:40:06&#43;0530 />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.slashinit.com//sitemap.xml" />
+
+
+
+  <meta property="og:type" content="article" />
+  <meta property="article:publisher" content="SlashInit" />
+  <meta property="og:article:published_time" content=2022-01-05T20:16:33&#43;0530 />
+  <meta property="article:published_time" content=2022-01-05T20:16:33&#43;0530 />
+
+  
+    <meta property="og:article:author" content="Naveen" />
+    <meta property="article:author" content="Naveen" />
+    <meta name="author" content="Naveen" />
+  
+
+  
+    <meta name="news_keywords" content="Debugging" />
+    <meta property="article:section" content="Debugging" />
+  
+
+  <script defer type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": "Building QEMU from source",
+      "author": {
+        "@type": "Person",
+        "name": "Naveen"
+      },
+      "datePublished": "2022-01-05",
+      "description": "Step by step guide to build qemu from source on your linux host machine",
+      "wordCount":  553 ,
+      "mainEntityOfPage": "True",
+      "dateModified": "2022-01-05",
+      "image": {
+        "@type": "imageObject",
+		"url": "https:\/\/www.slashinit.com\/posts\/building-qemu-from-source\//images/qemu.jpg"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking",
+        "logo": {
+          "@type": "imageObject",
+		  "url": "https:\/\/www.slashinit.com\/images\/logo.png"
+        }
+      }
+    }
+  </script>
+
+
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+
+
+
+<meta name="keywords" content=" qemu,build,make,source,ubuntu,linux, " />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" /> 
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" /> 
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="SlashInit" /> 
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" /> 
+
+		<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700|Playfair+Display:400,700,900" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="icon" href="/images/favicon.png" type="image/png" sizes="16x16">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-174380430-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+	</head>
+	<body>
+		
+		<div class="site-wrap">
+
+			
+			<div class="site-mobile-menu">
+				<div class="site-mobile-menu-header">
+					<div class="site-mobile-menu-close mt-3">
+						<span><i class="fa fa-times js-menu-toggle" aria-hidden="true"></i></span>
+					</div>
+				</div>
+				<div class="site-mobile-menu-body"></div>
+			</div>
+
+			<header class="site-navbar" role="banner">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+
+						<div class="col-3 site-logo">
+							<a href="/" class="text-white h2 mb-0">$ /init</a><div class="blink-cursor"><i></i></div>
+						</div>
+
+						<div class="col-8 text-right">
+							<nav class="site-navigation" role="navigation">
+								<ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
+									
+									<li><a href="/">Home</a></li>
+									<li><a href="/posts/">All Posts</a></li>
+									<li><a href="/categories/">Categories</a></li>
+									<li><a href="/tags/">Tags</a></li>
+								</ul>
+							</nav>
+							<a href="#" class="site-menu-toggle js-menu-toggle text-white d-inline-block d-lg-none"><i class="fa fa-bars" aria-hidden="true"></i></a></div>
+					</div>
+				</div>
+			</header>
+			
+<section class="site-section py-lg">
+
+	<div class="container">
+		<div class="post-content-heading">
+			<h1>Building QEMU from source</h1>
+			
+			<a href="/tags/qemu"><span class="badge badge-info">#qemu</span></a>
+			
+			<a href="/tags/debugging"><span class="badge badge-info">#debugging</span></a>
+			
+			<a href="/tags/virtualization"><span class="badge badge-info">#virtualization</span></a>
+			
+			<a href="/tags/assembly"><span class="badge badge-info">#assembly</span></a>
+			
+		</div>
+
+		<div class="row post-author-bar">
+			<div class="col-md-auto entry2 align-items-center">
+				<div class="post-meta align-items-center text-left clearfix">
+					<figure class="author-figure mb-0 mr-3 float-left"><img src="/images/authors/naveen.jpg" alt="Image" class="img-fluid"></figure>
+					<span class="d-inline-block mt-1">By <a href="https://slashinit.com/about/">Naveen</a></span>
+					<span>&nbsp;-&nbsp; January 5, 2022 </span>
+				</div>
+			</div>
+			<div class="col-md-4"></div>
+			<span class="share">
+				<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.slashinit.com%2fposts%2fbuilding-qemu-from-source%2f&amp;title=Building%20QEMU%20from%20source&amp;summary=Step%20by%20step%20guide%20to%20build%20qemu%20from%20source%20on%20your%20linux%20host%20machine&amp;source=https%3a%2f%2fwww.slashinit.com%2fposts%2fbuilding-qemu-from-source%2f" target="_blank" rel="noopener" aria-label="">
+					<i class="fa fa-linkedin-square"></i>
+				</a>
+				<a href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.slashinit.com%2fposts%2fbuilding-qemu-from-source%2f" target="_blank" rel="noopener" aria-label="">
+					<i class="fa fa-facebook-square"></i>
+				</a>
+				<a href="https://twitter.com/intent/tweet/?text=Building%20QEMU%20from%20source&url=https%3a%2f%2fwww.slashinit.com%2fposts%2fbuilding-qemu-from-source%2f" target="_blank" rel="noopener" aria-label="">
+					<i class="fa fa-twitter-square"></i>
+				</a>
+				<a href="whatsapp://send?text=Building%20QEMU%20from%20source - https%3a%2f%2fwww.slashinit.com%2fposts%2fbuilding-qemu-from-source%2f" target="_blank" rel="noopener" aria-label="">
+					<i class="fa fa-whatsapp"></i>
+				</a>
+				<span>
+		</div>
+		<div class="row blog-entries element-animate">
+			<div class="share-hidden" style="display:none">
+				<ul id="social-sidebar">
+					<li>
+						<a class="entypo-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.slashinit.com%2fposts%2fbuilding-qemu-from-source%2f&amp;title=Building%20QEMU%20from%20source&amp;summary=Step%20by%20step%20guide%20to%20build%20qemu%20from%20source%20on%20your%20linux%20host%20machine&amp;source=https%3a%2f%2fwww.slashinit.com%2fposts%2fbuilding-qemu-from-source%2f" target="_blank" rel="noopener" aria-label="">
+							<i class="fa fa-linkedin-square"></i><span>LinkedIn</span>
+						</a>
+					</li>
+					<li>
+						<a class="entypo-facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.slashinit.com%2fposts%2fbuilding-qemu-from-source%2f" target="_blank" rel="noopener" aria-label="">
+							<i class="fa fa-facebook-square"></i><span>Facebook</span>
+						</a>
+					</li>
+					<li>
+						<a class="entypo-twitter" href="https://twitter.com/intent/tweet/?text=Building%20QEMU%20from%20source&url=https%3a%2f%2fwww.slashinit.com%2fposts%2fbuilding-qemu-from-source%2f" target="_blank" rel="noopener" aria-label="">
+							<i class="fa fa-twitter-square"></i><span>Twitter</span>
+						</a>
+					</li>
+					<li>
+						<a class="entypo-whatsapp" href="whatsapp://send?text=Building%20QEMU%20from%20source - https%3a%2f%2fwww.slashinit.com%2fposts%2fbuilding-qemu-from-source%2f" target="_blank" rel="noopener" aria-label="">
+							<i class="fa fa-whatsapp"></i><span>WhatsApp</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col-md-12 col-lg-8 main-content">
+
+				<div class="post-content-body">
+					<p>Recently, while working on a baremetal project, I encountered a bug in the QEMU version I was using. And unfortunately, it was the latest version that was available for my host distribution. However, the official QEMU lineup was much ahead and already had the fix for the bug, that I was stuck with. This is one of the reason why you may want to build the QEMU yourself from the source. Another scenario could be when you want to enable QEMU debugging logs or control certain QEMU features.</p>
+<p>In this post, we are going to look how you can pull the QEMU source yourself and build on your linux host machine. I am sitting on an Ubuntu 20.04.3 LTS, but the steps should be the same for your host machine, you might just need to change the commands corresponding to your package manager.</p>
+<h3 id="step-1--pulling-the-source">Step 1 : Pulling the source</h3>
+<p>You can pull the source either as a tar file from <a href="https://www.qemu.org/download/">QEMU downloads page</a> or from its git repository <code>https://gitlab.com/qemu-project/qemu.git</code>.</p>
+<p><div id="terminal" >
+	
+	<section id="terminal__bar">
+		<div id="bar__buttons">
+			<button class="bar__button" id="bar__button--exit">&#10005;</button>
+			<button class="bar__button">&#9472;</button>
+			<button class="bar__button">&#9723;</button>
+		</div>
+		<span id="bar__user">code@slashinit </span>
+	</section>
+	
+	<section id="terminal__body">
+		
+	  <div class="terminal__text">
+	  <pre><br><span id="terminal__prompt--user">code@slashinit</span>:<span id="terminal__prompt--location">/opt</span>$ sudo wget https&#58;//download.qemu.org/qemu-6.2.0.tar.xz<br>--2022-01-05 17:44:25--  https://download.qemu.org/qemu-6.2.0.tar.xz<br>Resolving proxy-wsa.esl.cisco.com (proxy-wsa.esl.cisco.com)... 72.163.217.104<br>Connecting to proxy-wsa.esl.cisco.com (proxy-wsa.esl.cisco.com)|72.163.217.104|:80... connected.<br>Proxy request sent, awaiting response... 200 OK<br>Length: 115667324 (110M) [application/x-xz]<br>Saving to: ‘qemu-6.2.0.tar.xz’<br><br>qemu-6.2.0.tar.xz                                   100%[=================================================================================================================&gt;] 110.31M   814KB/s    in 2m 23s<br><br>2022-01-05 17:46:49 (791 KB/s) - ‘qemu-6.2.0.tar.xz’ saved [115667324/115667324]<br><br><span id="terminal__prompt--user">code@slashinit</span>:<span id="terminal__prompt--location">/opt</span>$<br><br></pre>
+	  </div>
+	</section>
+</div>
+
+<!-- raw HTML omitted --></p>
+<h3 id="step-2--extract-the-tar-file">Step 2 : Extract the tar file</h3>
+<p>In case you downloaded the source as a tar file, extract it.</p>
+<p><div id="terminal" >
+	
+	<section id="terminal__bar">
+		<div id="bar__buttons">
+			<button class="bar__button" id="bar__button--exit">&#10005;</button>
+			<button class="bar__button">&#9472;</button>
+			<button class="bar__button">&#9723;</button>
+		</div>
+		<span id="bar__user">code@slashinit </span>
+	</section>
+	
+	<section id="terminal__body">
+		
+	  <div class="terminal__text">
+	  <pre><br><span id="terminal__prompt--user">code@slashinit</span>:<span id="terminal__prompt--location">/opt</span>$ sudo tar -xvf qemu-6.2.0.tar.xz<br>qemu-6.2.0/<br>qemu-6.2.0/.patchew.yml<br>qemu-6.2.0/ebpf/<br>qemu-6.2.0/ebpf/meson.build<br>qemu-6.2.0/ebpf/rss.bpf.skeleton.h<br>qemu-6.2.0/ebpf/ebpf_rss.c<br>qemu-6.2.0/ebpf/ebpf_rss.h<br>qemu-6.2.0/ebpf/trace.h<br>qemu-6.2.0/ebpf/trace-events<br>qemu-6.2.0/ebpf/ebpf_rss-stub.c<br>qemu-6.2.0/.gitlab-ci.yml<br>...<br>...<br>qemu-6.2.0/subprojects/<br>qemu-6.2.0/subprojects/libvhost-user/<br>qemu-6.2.0/subprojects/libvhost-user/libvhost-user.c<br>qemu-6.2.0/subprojects/libvhost-user/meson.build<br>qemu-6.2.0/subprojects/libvhost-user/libvhost-user-glib.c<br>qemu-6.2.0/subprojects/libvhost-user/link-test.c<br>qemu-6.2.0/subprojects/libvhost-user/standard-headers/<br>qemu-6.2.0/subprojects/libvhost-user/standard-headers/linux<br>qemu-6.2.0/subprojects/libvhost-user/libvhost-user.h<br>qemu-6.2.0/subprojects/libvhost-user/include/<br>qemu-6.2.0/subprojects/libvhost-user/include/atomic.h<br>qemu-6.2.0/subprojects/libvhost-user/libvhost-user-glib.h<br>qemu-6.2.0/qemu.nsi<br><span id="terminal__prompt--user">code@slashinit</span>:<span id="terminal__prompt--location">/opt</span>$<br><br></pre>
+	  </div>
+	</section>
+</div>
+
+<!-- raw HTML omitted --></p>
+<h3 id="step-3--install-dependencies">Step 3 : Install dependencies</h3>
+<p><div id="terminal" >
+	
+	<section id="terminal__bar">
+		<div id="bar__buttons">
+			<button class="bar__button" id="bar__button--exit">&#10005;</button>
+			<button class="bar__button">&#9472;</button>
+			<button class="bar__button">&#9723;</button>
+		</div>
+		<span id="bar__user">code@slashinit </span>
+	</section>
+	
+	<section id="terminal__body">
+		
+	  <div class="terminal__text">
+	  <pre><br><span id="terminal__prompt--user">code@slashinit</span>:<span id="terminal__prompt--location">/opt</span>$ sudo apt-get install ninja-build libglib2.0-dev libpixman-1-dev<br><br></pre>
+	  </div>
+	</section>
+</div>
+
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+	
+Note: You may have to install additional dependencies e.g. make, in case your host does not already have them. Just follow the errors and do the needful
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<!-- raw HTML omitted --></p>
+<h3 id="step-4--configure">Step 4 : Configure</h3>
+<p><div id="terminal" >
+	
+	<section id="terminal__bar">
+		<div id="bar__buttons">
+			<button class="bar__button" id="bar__button--exit">&#10005;</button>
+			<button class="bar__button">&#9472;</button>
+			<button class="bar__button">&#9723;</button>
+		</div>
+		<span id="bar__user">code@slashinit </span>
+	</section>
+	
+	<section id="terminal__body">
+		
+	  <div class="terminal__text">
+	  <pre><br><span id="terminal__prompt--user">code@slashinit</span>:<span id="terminal__prompt--location">/opt</span>$ cd qemu-6.2.0<br><span id="terminal__prompt--user">code@slashinit</span>:<span id="terminal__prompt--location">/opt/qemu-6.2.0</span>$<br><span id="terminal__prompt--user">code@slashinit</span>:<span id="terminal__prompt--location">/opt/qemu-6.2.0</span>$ ./configure<br>Using &#39;./build&#39; as the directory for build output<br>The Meson build system<br>Version: 0.59.3<br>Source dir: /opt/qemu-6.2.0<br>Build dir: /opt/qemu-6.2.0/build<br>Build type: native build<br>Project name: qemu<br>Project version: 6.2.0<br>...<br>...<br>    libdaxctl support            : NO<br>    libudev                      : NO<br>    FUSE lseek                   : NO<br>    selinux                      : YES 3.0<br><br>  Subprojects<br>    libvhost-user                : YES<br><br>Found ninja-1.10.0 at /usr/bin/ninja<br><br><span id="terminal__prompt--user">code@slashinit</span>:<span id="terminal__prompt--location">/opt/qemu-6.2.0</span>$<br><br></pre>
+	  </div>
+	</section>
+</div>
+
+<!-- raw HTML omitted --></p>
+<h3 id="step-5--make">Step 5 : Make</h3>
+<p><div id="terminal" >
+	
+	<section id="terminal__bar">
+		<div id="bar__buttons">
+			<button class="bar__button" id="bar__button--exit">&#10005;</button>
+			<button class="bar__button">&#9472;</button>
+			<button class="bar__button">&#9723;</button>
+		</div>
+		<span id="bar__user">code@slashinit </span>
+	</section>
+	
+	<section id="terminal__body">
+		
+	  <div class="terminal__text">
+	  <pre><br><span id="terminal__prompt--user">code@slashinit</span>:<span id="terminal__prompt--location">/opt/qemu-6.2.0</span>$ make -j24<br>changing dir to build for make &#34;&#34;...<br>make[1]: Entering directory &#39;/opt/qemu-6.2.0/build&#39;<br>/usr/bin/ninja  build.ninja &amp;&amp; touch build.ninja.stamp<br>ninja: no work to do.<br>/usr/bin/python3 -B /opt/qemu-6.2.0/meson/meson.py introspect --targets --tests --benchmarks | /usr/bin/python3 -B scripts/mtest2make.py &gt; Makefile.mtest<br>  AS      multiboot.o<br>  AS      multiboot_dma.o<br>  AS      linuxboot.o<br>  CC      linuxboot_dma.o<br>  AS      kvmvapic.o<br>  AS      pvh.o<br>  CC      pvh_main.o<br>  BUILD   multiboot.img<br>  BUILD   multiboot_dma.img<br>  BUILD   linuxboot.img<br>  BUILD   linuxboot_dma.img<br>  BUILD   kvmvapic.img<br>  BUILD   pvh.img<br>  BUILD   multiboot_dma.raw<br>  BUILD   linuxboot.raw<br>  BUILD   linuxboot_dma.raw<br>  BUILD   multiboot.raw<br>  BUILD   pvh.raw<br>  BUILD   kvmvapic.raw<br>  SIGN    multiboot_dma.bin<br>  SIGN    multiboot.bin<br>  SIGN    kvmvapic.bin<br>  SIGN    pvh.bin<br>  SIGN    linuxboot_dma.bin<br>  SIGN    linuxboot.bin<br>[1/9610] Generating &#39;libqemu-alpha-linux-user.fa.p/syscall_nr.h&#39;.<br>[2/9610] Compiling C object libcapstone.a.p/capstone_MCInstrDesc.c.o<br>  ...<br>  ...<br>[9609/9610] Compiling C object libqemu-xtensaeb-linux-user.fa.p/target_xtensa_core-dsp3400.c.o<br>[9610/9610] Linking target qemu-xtensaeb<br>make[1]: Leaving directory &#39;/opt/qemu-6.2.0/build&#39;<br>changing dir to build for make &#34;&#34;...<br>make[1]: Entering directory &#39;/opt/qemu-6.2.0/build&#39;<br>[1/177] Generating QAPI test (include) with a custom command<br>[2/144] Generating qemu-version.h with a custom command (wrapped by meson to capture output)<br>make[1]: Leaving directory &#39;/opt/qemu-6.2.0/build&#39;<br><span id="terminal__prompt--user">code@slashinit</span>:<span id="terminal__prompt--location">/opt/qemu-6.2.0</span>$<br><br></pre>
+	  </div>
+	</section>
+</div>
+
+<!-- raw HTML omitted --></p>
+<p>The binaries can be found in the <code>build/</code> folder.</p>
+
+				</div>
+
+
+				<div class="pt-5">
+					<p>Categories:  
+						<a href="/categories/debugging">
+							
+							Debugging
+							
+						</a>
+						
+						<a href="/categories/virtualization">
+							
+							, 
+							Virtualization
+							
+						</a>
+						
+						<a href="/categories/assembly">
+							
+							, 
+							Assembly
+							
+						</a>
+						
+						Tags: 
+						<a href="/tags/qemu">
+							
+							#qemu
+						</a>
+						
+						<a href="/tags/debugging">
+							
+							, 
+							#debugging
+							
+						</a>
+						
+						<a href="/tags/virtualization">
+							
+							, 
+							#virtualization
+							
+						</a>
+						
+						<a href="/tags/assembly">
+							
+							, 
+							#assembly
+							
+						</a>
+						
+					</p>
+				</div>
+
+
+
+
+			</div>
+
+			
+
+			<div class="col-md-12 col-lg-4 sidebar">
+				<div class="sidebar-box">
+					<h3 class="heading">Recent Posts in Category</h3>
+					<div class="post-entry-sidebar">
+						<ul>
+							
+							
+							<li>
+								<a href="https://www.slashinit.com/posts/building-qemu-from-source/">
+									<img src="https://www.slashinit.com/posts/building-qemu-from-source//images/qemu.jpg" alt="Image" class="mr-4">
+									<div class="text">
+										<h4>Building QEMU from source</h4>
+										<div class="post-meta">
+											<span class="mr-2">January 5, 2022</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							
+							<li>
+								<a href="https://www.slashinit.com/posts/understanding-arm-naving-conventions/">
+									<img src="https://www.slashinit.com/posts/understanding-arm-naving-conventions//images/coretable.jpg" alt="Image" class="mr-4">
+									<div class="text">
+										<h4>Understanding ARM naming conventions - ARM7,ARMv7,Cortex-A7 ?</h4>
+										<div class="post-meta">
+											<span class="mr-2">August 8, 2020</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				
+
+				<div class="sidebar-box">
+					<h3 class="heading">Categories</h3>
+					<ul class="categories">
+						
+						<li><a href="/categories/assembly">Assembly<span>(2)</span></a></li>
+						
+						<li><a href="/categories/bootloaders">Bootloaders<span>(1)</span></a></li>
+						
+						<li><a href="/categories/debugging">Debugging<span>(1)</span></a></li>
+						
+						<li><a href="/categories/linux-kernel">Linux Kernel<span>(1)</span></a></li>
+						
+						<li><a href="/categories/linux-tips">Linux Tips<span>(1)</span></a></li>
+						
+						<li><a href="/categories/microcontrollers">Microcontrollers<span>(1)</span></a></li>
+						
+						<li><a href="/categories/operating-system">Operating System<span>(1)</span></a></li>
+						
+						<li><a href="/categories/virtualization">Virtualization<span>(1)</span></a></li>
+						
+					</ul>
+				</div>
+				
+
+				<div class="sidebar-box">
+					<h3 class="heading">Tags</h3>
+					<ul class="tags">
+						
+						<li><a href="/tags/arm">#arm</a></li>
+						
+						<li><a href="/tags/assembly">#assembly</a></li>
+						
+						<li><a href="/tags/boot">#boot</a></li>
+						
+						<li><a href="/tags/debugging">#debugging</a></li>
+						
+						<li><a href="/tags/linux">#linux</a></li>
+						
+						<li><a href="/tags/linux-kernel">#linux-kernel</a></li>
+						
+						<li><a href="/tags/microcontrollers">#microcontrollers</a></li>
+						
+						<li><a href="/tags/microprocessors">#microprocessors</a></li>
+						
+						<li><a href="/tags/operating-system">#operating-system</a></li>
+						
+						<li><a href="/tags/qemu">#qemu</a></li>
+						
+						<li><a href="/tags/virtualization">#virtualization</a></li>
+						
+					</ul>
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+</section>
+
+<script
+  async
+  src="https://utteranc.es/client.js"
+  repo="slashinit/slashinit.github.io"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script>
+<script type="text/javascript">
+       var postpage=true
+</script>
+
+
+
+
+<div class="site-section bg-light">
+	<div class="container">
+
+		<div class="row mb-5">
+			<div class="col-12">
+				<h2>More Related Posts</h2>
+			</div>
+		</div>
+
+		<div class="row align-items-stretch retro-layout">
+
+			
+
+			<div class="col-md-7">
+				
+				<div class="two-col d-block d-md-flex">
+					
+					<a href="https://www.slashinit.com/posts/understanding-arm-naving-conventions/" class="hentry v-height img-2 gradient" style="background-image: url('https://www.slashinit.com/posts/understanding-arm-naving-conventions//images/coretable.jpg');">
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<div class="text text-sm">
+							<h2>Understanding ARM naming conventions - ARM7,ARMv7,Cortex-A7 ?</h2>
+							<span>August 8, 2020</span>
+						</div>
+					</a>
+					
+					
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+
+
+
+<div class="site-footer">
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-md-4">
+				<h3 class="footer-heading mb-4">Why this blog?</h3>
+				<p>"If you can't explain it to a 6 years old, you don't understand it yourself " - Albert Einstein</p>
+				<p>This blog aims exactly that - to explain the ideas of system programming in the most interesting and intuitive ways.</p>
+			</div>
+			<div class="col-md-3 ml-auto">
+				
+				<ul class="list-unstyled float-left mr-5">
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/terms-conditions">Terms & Conditions</a></li>
+				</ul>
+				<ul class="list-unstyled float-left">
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<div>
+					<h3 class="footer-heading mb-4">Connect With Us</h3>
+					<p>
+						<a href="https://github.com/slashinit" target="_blank"><i class="fa fa-github pt-2 pr-2 pb-2 pl-0" aria-hidden="true"></i></a>
+						<a href="/contact"><i class="fa fa-envelope p-2" aria-hidden="true"></i></a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 text-center">
+				<p>
+					
+					Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a> and <a href="/" target="_blank" >Slashinit</a>
+					
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

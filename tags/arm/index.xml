@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ARM on SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking</title>
+    <link>https://www.slashinit.com/tags/arm/</link>
+    <description>Recent content in ARM on SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Aug 2020 18:47:07 +0530</lastBuildDate>
+    
+	<atom:link href="https://www.slashinit.com/tags/arm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Understanding ARM naming conventions - ARM7,ARMv7,Cortex-A7 ?</title>
+      <link>https://www.slashinit.com/posts/understanding-arm-naving-conventions/</link>
+      <pubDate>Sat, 08 Aug 2020 18:47:07 +0530</pubDate>
+      
+      <guid>https://www.slashinit.com/posts/understanding-arm-naving-conventions/</guid>
+      <description>Thoroughly understanding the mystery behind ARM core naming conventions.</description>
+    </item>
+    
+  </channel>
+</rss>
