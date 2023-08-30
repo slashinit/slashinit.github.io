@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>QEMU on SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking</title>
+    <title>QEMU on www.slashinit.com</title>
     <link>https://www.slashinit.com/tags/qemu/</link>
-    <description>Recent content in QEMU on SlashInit - a place for embedded, firmware, bootloaders, assembly and kernel hacking</description>
+    <description>Recent content in QEMU on www.slashinit.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 05 Jan 2022 20:16:33 +0530</lastBuildDate><atom:link href="https://www.slashinit.com/tags/qemu/index.xml" rel="self" type="application/rss+xml" />
