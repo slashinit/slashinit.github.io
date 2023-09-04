@@ -1679,3 +1679,123 @@ margin-bottom: 10px; }
 .figure-caption {
 	font-size: 12px;
 }
+
+@media only screen and (max-width: 992px) {
+	.alertbar {
+		position: relative !Important;
+		margin-bottom: 20px;
+		margin-top: 20px;
+		box-shadow: none !Important;
+		padding-right: 14px !Important;
+	}
+
+	.alertbar form {
+		margin-top: 20px;
+	}
+
+	.alertbar span,
+	.alertbar form {
+		display: block;
+	}
+
+	.alertbar input[type="submit"] {
+		border-radius: 3px !Important;
+	}
+
+	.alertbar input[type="email"] {
+		margin-right: 0px !Important;
+		display: block;
+		border-right: 1px solid #ddd !Important;
+		margin-bottom: 10px;
+	}
+}
+.alertbar {
+	box-shadow: 0 -3px 10px 0 rgba(0, 0, 0, .0785);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+	width: 100%;
+	padding: 14px 0;
+	z-index: 1;
+	display: none;
+	color: black;
+}
+
+.alertbar form {
+	display: inline-block;
+}
+
+.alertbar input[type="email"] {
+	font-size: 0.85rem;
+	padding: 3px 5px 3px 10px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	border: 1px solid #ddd;
+	border-right: 0;
+	margin-right: -10px;
+	height: 34px;
+	letter-spacing: 0.5px;
+	margin-left: 5px;
+}
+
+.alertbar input[type="submit"] {
+	background-color: #1C9963;
+	border: 1px solid #1C9963;
+	color: rgba(255, 255, 255, 1);
+	fill: rgba(255, 255, 255, 1);
+	font-size: 0.85rem;
+	border-radius: 0;
+	padding: 4px 10px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	font-weight: 600;
+	height: 34px;
+	letter-spacing: 0.5px;
+	cursor: pointer;
+}
+.confetti {
+  position: absolute;
+  animation: grow 1.4s cubic-bezier(0.42, 0, 0.275, 1.155) both;
+}
+.checkmark {
+  position: relative;
+  padding: 30px;
+  animation: checkmark 5.6s cubic-bezier(0.42, 0, 0.275, 1.155) both;
+}
+
+.checkmark__check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate3d(-50%, -50%, 0);
+  fill: #fff;
+}
+
+.checkmark__back {
+  animation: rotate 35s linear both infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes checkmark {
+  0%{
+    opacity: 0;
+    transform: scale(0);
+  }
+  10%, 50%, 90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.spacer {
+	margin-top:120px;
+}

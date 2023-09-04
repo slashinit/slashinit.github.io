@@ -90,7 +90,18 @@ jQuery(document).ready(function($) {
 	}; 
 	siteMenuClone();
 
+	// alertbar later
+	$(document).scroll(function () {
+		var maxScroll = $(document).height() - $(window).height();
+		var y = $(this).scrollTop();
+		if (y > 350 || y + 100 > maxScroll) {
+			$('.alertbar').fadeIn();
+		} else {
+			$('.alertbar').fadeOut();
+		}
+	});
 });
+
 
 $(document).on('click', '[data-toggle="lightbox"]', function(event) {                                   event.preventDefault();
         $(this).ekkoLightbox();
