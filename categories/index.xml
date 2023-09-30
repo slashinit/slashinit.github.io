@@ -6,7 +6,25 @@
     <description>Recent content in Categories on www.slashinit.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Jan 2022 22:00:22 +0530</lastBuildDate><atom:link href="https://www.slashinit.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Sep 2023 15:18:08 +0530</lastBuildDate><atom:link href="https://www.slashinit.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux-Kernel</title>
+      <link>https://www.slashinit.com/categories/linux-kernel/</link>
+      <pubDate>Wed, 20 Sep 2023 15:18:08 +0530</pubDate>
+      
+      <guid>https://www.slashinit.com/categories/linux-kernel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Operating-System</title>
+      <link>https://www.slashinit.com/categories/operating-system/</link>
+      <pubDate>Wed, 20 Sep 2023 15:18:08 +0530</pubDate>
+      
+      <guid>https://www.slashinit.com/categories/operating-system/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Bootloaders</title>
       <link>https://www.slashinit.com/categories/bootloaders/</link>
@@ -17,29 +35,11 @@
     </item>
     
     <item>
-      <title>Linux-Kernel</title>
-      <link>https://www.slashinit.com/categories/linux-kernel/</link>
-      <pubDate>Sun, 16 Jan 2022 22:00:22 +0530</pubDate>
-      
-      <guid>https://www.slashinit.com/categories/linux-kernel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Linux-Tips</title>
       <link>https://www.slashinit.com/categories/linux-tips/</link>
       <pubDate>Sun, 16 Jan 2022 22:00:22 +0530</pubDate>
       
       <guid>https://www.slashinit.com/categories/linux-tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Operating-System</title>
-      <link>https://www.slashinit.com/categories/operating-system/</link>
-      <pubDate>Sun, 16 Jan 2022 22:00:22 +0530</pubDate>
-      
-      <guid>https://www.slashinit.com/categories/operating-system/</guid>
       <description></description>
     </item>
     

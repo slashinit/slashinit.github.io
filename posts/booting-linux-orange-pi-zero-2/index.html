@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head itemscope itemtype="https://www.slashinit.com/">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title itemprop="name">Booting linux image on Orange Pi Zero 2 - the boot test</title>
+		
+<meta property="og:title" content="Booting linux image on Orange Pi Zero 2 - the boot test" />
+<meta name="twitter:title" content="Booting linux image on Orange Pi Zero 2 - the boot test" />
+<meta itemprop="name" content="Booting linux image on Orange Pi Zero 2 - the boot test" />
+<meta name="application-name" content="Booting linux image on Orange Pi Zero 2 - the boot test" />
+<meta property="og:site_name" content="SlashInit" />
+
+<meta name="description" content="How to boot Orange Pi OS on Orange Pi Zero 2. We make use of official stock OS image released by Orange Pi." />
+<meta itemprop="description" content="How to boot Orange Pi OS on Orange Pi Zero 2. We make use of official stock OS image released by Orange Pi." />
+<meta property="og:description" content="How to boot Orange Pi OS on Orange Pi Zero 2. We make use of official stock OS image released by Orange Pi." />
+<meta name="twitter:description" content="How to boot Orange Pi OS on Orange Pi Zero 2. We make use of official stock OS image released by Orange Pi." />
+<meta name="twitter:card" content="How to boot Orange Pi OS on Orange Pi Zero 2. We make use of official stock OS image released by Orange Pi.">
+
+<base href="https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2/">
+<link rel="canonical" href="https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2/" itemprop="url" />
+<meta name="url" content="https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2/" />
+<meta name="twitter:url" content="https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2/" />
+<meta property="og:url" content="https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2/" />
+
+<meta property="og:locale" content="en">
+<meta name="language" content="Global">
+<link rel="alternate" hreflang="en" href="https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2/" title="Global">
+
+
+
+<meta itemprop="image" content="https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2//images/thumbnail.png" />
+<meta property="og:image" content="https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2//images/thumbnail.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@SlashInit" />
+<meta name="twitter:image" content="https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2//images/thumbnail.png" />
+<meta name="twitter:image:src" content="https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2//images/thumbnail.png" />
+
+
+<meta property="og:updated_time" content=2023-09-30T14:17:21&#43;0530 />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.slashinit.com//sitemap.xml" />
+
+
+
+  <meta property="og:type" content="article" />
+  <meta property="article:publisher" content="SlashInit" />
+  <meta property="og:article:published_time" content=2023-09-20T15:18:08&#43;0530 />
+  <meta property="article:published_time" content=2023-09-20T15:18:08&#43;0530 />
+
+  
+    <meta property="og:article:author" content="Naveen" />
+    <meta property="article:author" content="Naveen" />
+    <meta name="author" content="Naveen" />
+  
+
+  
+    <meta name="news_keywords" content="Operating-System" />
+    <meta property="article:section" content="Operating-System" />
+  
+
+  <script defer type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": "Booting linux image on Orange Pi Zero 2 - the boot test",
+      "author": {
+        "@type": "Person",
+        "name": "Naveen"
+      },
+      "datePublished": "2023-09-20",
+      "description": "How to boot Orange Pi OS on Orange Pi Zero 2. We make use of official stock OS image released by Orange Pi.",
+      "wordCount":  447 ,
+      "mainEntityOfPage": "True",
+      "dateModified": "2023-09-30",
+      "image": {
+        "@type": "imageObject",
+		"url": "https:\/\/www.slashinit.com\/posts\/booting-linux-orange-pi-zero-2\//images/thumbnail.png"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "www.slashinit.com",
+        "logo": {
+          "@type": "imageObject",
+		  "url": "https:\/\/www.slashinit.com\/images\/logo.png"
+        }
+      }
+    }
+  </script>
+
+
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+
+
+
+<meta name="keywords" content=" boot,orange,pi,zero,linux,ubuntu,debian, " />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" /> 
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" /> 
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="SlashInit" /> 
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" /> 
+
+		<link href="https://fonts.googleapis.com/css?family=Muli:300,400,700|Playfair+Display:400,700,900" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="icon" href="/images/favicon.png" type="image/png" sizes="16x16">
+		
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3YQGMSPLK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-Y3YQGMSPLK', { 'anonymize_ip': false });
+}
+</script>
+
+	</head>
+	<body>
+		
+		<div class="site-wrap">
+
+			
+			<div class="site-mobile-menu">
+				<div class="site-mobile-menu-header">
+					<div class="site-mobile-menu-close mt-3">
+						<span><i class="fa fa-times js-menu-toggle" aria-hidden="true"></i></span>
+					</div>
+				</div>
+				<div class="site-mobile-menu-body"></div>
+			</div>
+
+			<header class="site-navbar" role="banner">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+
+						<div class="col-3 site-logo">
+							<a href="/" class="text-white h2 mb-0">$ /init</a><div class="blink-cursor"><i></i></div>
+						</div>
+
+						<div class="col-8 text-right">
+							<nav class="site-navigation" role="navigation">
+								<ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
+									
+									<li><a href="/">Home</a></li>
+									<li><a href="/posts/">All Posts</a></li>
+									<li><a href="/categories/">Categories</a></li>
+									<li><a href="/tags/">Tags</a></li>
+								</ul>
+							</nav>
+							<a href="#" class="site-menu-toggle js-menu-toggle text-white d-inline-block d-lg-none"><i class="fa fa-bars" aria-hidden="true"></i></a></div>
+					</div>
+				</div>
+			</header>
+			
+<section class="site-section py-lg">
+
+	<div class="container">
+		<div class="post-content-heading">
+			<h1>Booting linux image on Orange Pi Zero 2 - the boot test</h1>
+			
+			<a href="/tags/operating-system"><span class="badge badge-info">#operating-system</span></a>
+			
+			<a href="/tags/linux-kernel"><span class="badge badge-info">#linux-kernel</span></a>
+			
+			<a href="/tags/arm"><span class="badge badge-info">#arm</span></a>
+			
+			<a href="/tags/boot"><span class="badge badge-info">#boot</span></a>
+			
+			<a href="/tags/linux"><span class="badge badge-info">#linux</span></a>
+			
+			<a href="/tags/microprocessors"><span class="badge badge-info">#microprocessors</span></a>
+			
+		</div>
+
+		<div class="row post-author-bar">
+			<div class="col-md-auto entry2 align-items-center">
+				<div class="post-meta align-items-center text-left clearfix">
+					<figure class="author-figure mb-0 mr-3 float-left"><img src="/images/authors/naveen.jpg" alt="Image" class="img-fluid"></figure>
+					<span class="d-inline-block mt-1">By <a href="https://slashinit.com/about/">Naveen</a></span>
+					<span>&nbsp;-&nbsp; September 20, 2023 </span>
+				</div>
+			</div>
+			<div class="col-md-4"></div>
+			<span class="share">
+				<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.slashinit.com%2fposts%2fbooting-linux-orange-pi-zero-2%2f&amp;title=Booting%20linux%20image%20on%20Orange%20Pi%20Zero%202%20-%20the%20boot%20test&amp;summary=How%20to%20boot%20Orange%20Pi%20OS%20on%20Orange%20Pi%20Zero%202.%20We%20make%20use%20of%20official%20stock%20OS%20image%20released%20by%20Orange%20Pi.&amp;source=https%3a%2f%2fwww.slashinit.com%2fposts%2fbooting-linux-orange-pi-zero-2%2f" target="_blank" rel="noopener" aria-label="">
+					<i class="fa fa-linkedin-square"></i>
+				</a>
+				<a href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.slashinit.com%2fposts%2fbooting-linux-orange-pi-zero-2%2f" target="_blank" rel="noopener" aria-label="">
+					<i class="fa fa-facebook-square"></i>
+				</a>
+				<a href="https://twitter.com/intent/tweet/?text=Booting%20linux%20image%20on%20Orange%20Pi%20Zero%202%20-%20the%20boot%20test&url=https%3a%2f%2fwww.slashinit.com%2fposts%2fbooting-linux-orange-pi-zero-2%2f" target="_blank" rel="noopener" aria-label="">
+					<i class="fa fa-twitter-square"></i>
+				</a>
+				<a href="whatsapp://send?text=Booting%20linux%20image%20on%20Orange%20Pi%20Zero%202%20-%20the%20boot%20test - https%3a%2f%2fwww.slashinit.com%2fposts%2fbooting-linux-orange-pi-zero-2%2f" target="_blank" rel="noopener" aria-label="">
+					<i class="fa fa-whatsapp"></i>
+				</a>
+				<span>
+		</div>
+		<div class="row blog-entries element-animate">
+			<div class="share-hidden" style="display:none">
+				<ul id="social-sidebar">
+					<li>
+						<a class="entypo-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.slashinit.com%2fposts%2fbooting-linux-orange-pi-zero-2%2f&amp;title=Booting%20linux%20image%20on%20Orange%20Pi%20Zero%202%20-%20the%20boot%20test&amp;summary=How%20to%20boot%20Orange%20Pi%20OS%20on%20Orange%20Pi%20Zero%202.%20We%20make%20use%20of%20official%20stock%20OS%20image%20released%20by%20Orange%20Pi.&amp;source=https%3a%2f%2fwww.slashinit.com%2fposts%2fbooting-linux-orange-pi-zero-2%2f" target="_blank" rel="noopener" aria-label="">
+							<i class="fa fa-linkedin-square"></i><span>LinkedIn</span>
+						</a>
+					</li>
+					<li>
+						<a class="entypo-facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.slashinit.com%2fposts%2fbooting-linux-orange-pi-zero-2%2f" target="_blank" rel="noopener" aria-label="">
+							<i class="fa fa-facebook-square"></i><span>Facebook</span>
+						</a>
+					</li>
+					<li>
+						<a class="entypo-twitter" href="https://twitter.com/intent/tweet/?text=Booting%20linux%20image%20on%20Orange%20Pi%20Zero%202%20-%20the%20boot%20test&url=https%3a%2f%2fwww.slashinit.com%2fposts%2fbooting-linux-orange-pi-zero-2%2f" target="_blank" rel="noopener" aria-label="">
+							<i class="fa fa-twitter-square"></i><span>Twitter</span>
+						</a>
+					</li>
+					<li>
+						<a class="entypo-whatsapp" href="whatsapp://send?text=Booting%20linux%20image%20on%20Orange%20Pi%20Zero%202%20-%20the%20boot%20test - https%3a%2f%2fwww.slashinit.com%2fposts%2fbooting-linux-orange-pi-zero-2%2f" target="_blank" rel="noopener" aria-label="">
+							<i class="fa fa-whatsapp"></i><span>WhatsApp</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col-md-12 col-lg-8 main-content">
+
+				<div class="post-content-body">
+					<p>Once you have got your Orange Pi Zero 2 shipped, the very first thing you may want to do before starting any serious development work, is to actually test out if the board works up all fine and not damaged during the shipment.</p>
+<p>The easiest and best way is to boot one of the stock OS image that is released by <a href="http://www.orangepi.org"target="_blank">Orange Pi</a> itself.</p>
+<h3 id="step-1--download-the-stock-os-image">Step 1 : Download the stock OS image</h3>
+<p>Navigate to the Orange Pi Zero 2 <a href="http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-Zero-2.html"target="_blank">support page</a> and download the OS image. For this post, we are going to make use of Orange Pi OS, but you can also pick Ubuntu or Debian images.</p>
+<div class="row mb-5 mt-5">
+	<div class="col-md-12 mb-4">
+		<a href="images/download.png" data-toggle="lightbox">
+			<img class="img-fluid rounded" src=images/download.png alt="Download page on official Orange Pi Zero 2 website">
+		<figcaption class="figure-caption">Download page on official Orange Pi Zero 2 website</figcaption>
+		</a>
+	</div>
+</div>
+
+<h3 id="step-2--prepare-sd-card">Step 2 : Prepare SD card</h3>
+<p>The downloaded image might be compressed (possibly with a <code>.xz</code> extension), so decompress it. Now we are going to make use of a free and open source tool called <a href="https://etcher.balena.io/"target="_blank">Balena Etcher</a>, to burn the downloaded image onto the SD card. Install the tool and the UI is quite simple. Following screenshots highlight the steps.
+<div class="row mb-5 mt-5">
+	<div class="col-md-12 mb-4">
+		<a href="images/balenaetcher1.png" data-toggle="lightbox">
+			<img class="img-fluid rounded" src=images/balenaetcher1.png alt="Balena Etcher : Select image">
+		<figcaption class="figure-caption">Balena Etcher : Select image</figcaption>
+		</a>
+	</div>
+</div>
+
+<div class="row mb-5 mt-5">
+	<div class="col-md-12 mb-4">
+		<a href="images/balenaetcher2.png" data-toggle="lightbox">
+			<img class="img-fluid rounded" src=images/balenaetcher2.png alt="Balena Etcher : Select target">
+		<figcaption class="figure-caption">Balena Etcher : Select target</figcaption>
+		</a>
+	</div>
+</div>
+
+<div class="row mb-5 mt-5">
+	<div class="col-md-12 mb-4">
+		<a href="images/balenaetcher3.png" data-toggle="lightbox">
+			<img class="img-fluid rounded" src=images/balenaetcher3.png alt="Balena Etcher : Start Flash">
+		<figcaption class="figure-caption">Balena Etcher : Start Flash</figcaption>
+		</a>
+	</div>
+</div>
+
+<div class="row mb-5 mt-5">
+	<div class="col-md-12 mb-4">
+		<a href="images/balenaetcher4.png" data-toggle="lightbox">
+			<img class="img-fluid rounded" src=images/balenaetcher4.png alt="Balena Etcher : Flash Completed !">
+		<figcaption class="figure-caption">Balena Etcher : Flash Completed !</figcaption>
+		</a>
+	</div>
+</div>
+</p>
+<p>After the flashing is completed, you can eject the SD card from the host machine.</p>
+<h3 id="step-3--plug-sd-card-and-boot">Step 3 : Plug SD card and boot</h3>
+<p>Plug the SD card onto the Orange Pi Zero 2 board. Make sure you have HDMI cable connected. You can connect a serial debug cable as well, but that&rsquo;s optional. Power-on the board using the type C cable. If everything is good, you should see the Orange Pi OS booting on the monitor, connected over HDMI. Use a USB hub to connect the mouse and keyboard to the board.</p>
+<div class="row mb-5 mt-5">
+	<div class="col-md-12 mb-4">
+		<a href="images/zero2.jpeg" data-toggle="lightbox">
+			<img class="img-fluid rounded" src=images/zero2.jpeg alt="Orange Pi Zero 2 with HDMI, serial and type C power cable connected">
+		<figcaption class="figure-caption">Orange Pi Zero 2 with HDMI, serial and type C power cable connected</figcaption>
+		</a>
+	</div>
+</div>
+
+<p>The default username and password should be (oem/oem). In case this does not work, password should be same as the username displayed on HDMI display login screen.</p>
+<p>I have made use of serial console and the below screenshot shows the login prompt over the serial.
+<div class="row mb-5 mt-5">
+	<div class="col-md-12 mb-4">
+		<a href="images/serialconsole.png" data-toggle="lightbox">
+			<img class="img-fluid rounded" src=images/serialconsole.png alt="Output on serial console of Orange Pi Zero 2">
+		<figcaption class="figure-caption">Output on serial console of Orange Pi Zero 2</figcaption>
+		</a>
+	</div>
+</div>
+</p>
+<h2 id="whats-next-">What&rsquo;s next ?</h2>
+<p>If the image boots all fine, then chances are that the board is all fine. However, if you still want to do deeper testing, say testing out SPI, I2C, etc, download the User Manual from the official Orange Pi Zero 2 <a href="http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-Zero-2.html"target="_blank">support page</a>. The manual lists detailed steps to test out different components.</p>
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+	
+Tip 💡 : Preserve this SD card as you may have to keep coming back to boot this official image in case you need a reference or test something in the official builds.
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+				</div>
+
+
+				<div class="pt-5">
+					<p>Categories:  
+						<a href="/categories/operating-system">
+							
+							Operating-System
+							
+						</a>
+						
+						<a href="/categories/linux-kernel">
+							
+							, 
+							Linux-Kernel
+							
+						</a>
+						
+						Tags: 
+						<a href="/tags/operating-system">
+							
+							#operating-system
+						</a>
+						
+						<a href="/tags/linux-kernel">
+							
+							, 
+							#linux-kernel
+							
+						</a>
+						
+						<a href="/tags/arm">
+							
+							, 
+							#arm
+							
+						</a>
+						
+						<a href="/tags/boot">
+							
+							, 
+							#boot
+							
+						</a>
+						
+						<a href="/tags/linux">
+							
+							, 
+							#linux
+							
+						</a>
+						
+						<a href="/tags/microprocessors">
+							
+							, 
+							#microprocessors
+							
+						</a>
+						
+					</p>
+				</div>
+
+
+
+
+			</div>
+
+			
+
+			<div class="col-md-12 col-lg-4 sidebar">
+				<div class="sidebar-box">
+					<h3 class="heading">Recent Posts in Category</h3>
+					<div class="post-entry-sidebar">
+						<ul>
+							
+							
+							<li>
+								<a href="https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2/">
+									<img src="https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2//images/thumbnail.png" alt="Image" class="mr-4">
+									<div class="text">
+										<h4>Booting linux image on Orange Pi Zero 2 - the boot test</h4>
+										<div class="post-meta">
+											<span class="mr-2">September 20, 2023</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							
+							<li>
+								<a href="https://www.slashinit.com/posts/installing-dhcp-tftp-nfs-network-boot/">
+									<img src="https://www.slashinit.com/posts/installing-dhcp-tftp-nfs-network-boot//images/setup.png" alt="Image" class="mr-4">
+									<div class="text">
+										<h4>Installing DHCP, TFTP and NFS servers - Complete network boot setup</h4>
+										<div class="post-meta">
+											<span class="mr-2">January 16, 2022</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				
+
+				<div class="sidebar-box">
+					<h3 class="heading">Categories</h3>
+					<ul class="categories">
+						
+						<li><a href="/categories/assembly">Assembly<span>(2)</span></a></li>
+						
+						<li><a href="/categories/bootloaders">Bootloaders<span>(1)</span></a></li>
+						
+						<li><a href="/categories/debugging">Debugging<span>(1)</span></a></li>
+						
+						<li><a href="/categories/linux-kernel">Linux Kernel<span>(2)</span></a></li>
+						
+						<li><a href="/categories/linux-tips">Linux Tips<span>(1)</span></a></li>
+						
+						<li><a href="/categories/microcontrollers">Microcontrollers<span>(1)</span></a></li>
+						
+						<li><a href="/categories/operating-system">Operating System<span>(2)</span></a></li>
+						
+						<li><a href="/categories/virtualization">Virtualization<span>(1)</span></a></li>
+						
+					</ul>
+				</div>
+				
+
+				<div class="sidebar-box">
+					<h3 class="heading">Tags</h3>
+					<ul class="tags">
+						
+						<li><a href="/tags/arm">#arm</a></li>
+						
+						<li><a href="/tags/assembly">#assembly</a></li>
+						
+						<li><a href="/tags/boot">#boot</a></li>
+						
+						<li><a href="/tags/debugging">#debugging</a></li>
+						
+						<li><a href="/tags/linux">#linux</a></li>
+						
+						<li><a href="/tags/linux-kernel">#linux-kernel</a></li>
+						
+						<li><a href="/tags/microcontrollers">#microcontrollers</a></li>
+						
+						<li><a href="/tags/microprocessors">#microprocessors</a></li>
+						
+						<li><a href="/tags/operating-system">#operating-system</a></li>
+						
+						<li><a href="/tags/qemu">#qemu</a></li>
+						
+						<li><a href="/tags/virtualization">#virtualization</a></li>
+						
+					</ul>
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+</section>
+
+<script
+  async
+  src="https://utteranc.es/client.js"
+  repo="slashinit/slashinit.github.io"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script>
+<script type="text/javascript">
+       var postpage=true
+</script>
+
+
+
+
+<div class="site-section bg-light">
+	<div class="container">
+
+		<div class="row mb-5">
+			<div class="col-12">
+				<h2>More Related Posts</h2>
+			</div>
+		</div>
+
+		<div class="row align-items-stretch retro-layout">
+
+			
+
+			<div class="col-md-7">
+				
+				<div class="two-col d-block d-md-flex">
+					
+					<a href="https://www.slashinit.com/posts/installing-dhcp-tftp-nfs-network-boot/" class="hentry v-height img-2 gradient" style="background-image: url('https://www.slashinit.com/posts/installing-dhcp-tftp-nfs-network-boot//images/setup.png');">
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<div class="text text-sm">
+							<h2>Installing DHCP, TFTP and NFS servers - Complete network boot setup</h2>
+							<span>January 16, 2022</span>
+						</div>
+					</a>
+					
+					
+					<a href="https://www.slashinit.com/posts/understanding-arm-naving-conventions/" class="hentry v-height img-2 ml-auto gradient" style="background-image: url('https://www.slashinit.com/posts/understanding-arm-naving-conventions//images/coretable.jpg');">
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<div class="text text-sm">
+							<h2>Understanding ARM naming conventions - ARM7,ARMv7,Cortex-A7 ?</h2>
+							<span>August 8, 2020</span>
+						</div>
+					</a>
+					
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+
+<div class="alertbar">
+	<div class="container text-center">
+        <span>
+            
+			
+            
+            &nbsp; Never miss a <b>post</b>, subscribe to our newsletter
+        </span>
+
+        <form action="https://gmail.us21.list-manage.com/subscribe/post?u=dc1a11007f5ffe738c5597e44&amp;amp;id=01231dd0d6&amp;amp;f_id=0022dfe6f0" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+		<input type="email" placeholder="Email" name="EMAIL" autocomplete="on" required>
+	    	
+	    	<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_dc1a11007f5ffe738c5597e44_01231dd0d6" tabindex="-1" value=""></div>
+		<input type="submit" value="Subscribe" name="subscribe" >
+        </form>
+
+	</div>
+</div>
+
+
+
+
+<div class="site-footer">
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-md-4">
+				<h3 class="footer-heading mb-4">Why this blog?</h3>
+				<p>"If you can't explain it to a 6 years old, you don't understand it yourself " - Albert Einstein</p>
+				<p>This blog aims exactly that - to explain the ideas of system programming in the most interesting and intuitive ways.</p>
+			</div>
+			<div class="col-md-3 ml-auto">
+				
+				<ul class="list-unstyled float-left mr-5">
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/terms-conditions">Terms & Conditions</a></li>
+				</ul>
+				<ul class="list-unstyled float-left">
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<div>
+					<h3 class="footer-heading mb-4">Connect With Us</h3>
+					<p>
+						<a href="https://github.com/slashinit" target="_blank"><i class="fa fa-github pt-2 pr-2 pb-2 pl-0" aria-hidden="true"></i></a>
+						<a href="/contact"><i class="fa fa-envelope p-2" aria-hidden="true"></i></a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 text-center">
+				<p>
+					
+					Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Designed with <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a> and <a href="/" target="_blank" >Slashinit</a>
+					
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

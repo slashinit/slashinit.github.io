@@ -4,21 +4,98 @@
   
   
   <url>
-    <loc>https://www.slashinit.com/tags/boot/</loc>
-    <lastmod>2022-01-16T23:38:09+05:30</lastmod>
+    <loc>https://www.slashinit.com/tags/arm/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
   </url>
   
   
   
   <url>
-    <loc>https://www.slashinit.com/categories/bootloaders/</loc>
-    <lastmod>2022-01-16T23:38:09+05:30</lastmod>
+    <loc>https://www.slashinit.com/tags/boot/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://www.slashinit.com/categories/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/tags/linux/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/tags/linux-kernel/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/categories/linux-kernel/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/tags/microprocessors/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/tags/operating-system/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/categories/operating-system/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/posts/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/tags/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/</loc>
+    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/categories/bootloaders/</loc>
     <lastmod>2022-01-16T23:38:09+05:30</lastmod>
   </url>
   
@@ -32,27 +109,6 @@
   
   
   <url>
-    <loc>https://www.slashinit.com/tags/linux/</loc>
-    <lastmod>2022-01-16T23:38:09+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/tags/linux-kernel/</loc>
-    <lastmod>2022-01-16T23:38:09+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/categories/linux-kernel/</loc>
-    <lastmod>2022-01-16T23:38:09+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.slashinit.com/categories/linux-tips/</loc>
     <lastmod>2022-01-16T23:38:09+05:30</lastmod>
   </url>
@@ -60,99 +116,57 @@
   
   
   <url>
-    <loc>https://www.slashinit.com/tags/operating-system/</loc>
-    <lastmod>2022-01-16T23:38:09+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/categories/operating-system/</loc>
-    <lastmod>2022-01-16T23:38:09+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/posts/</loc>
-    <lastmod>2022-01-16T23:38:09+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/tags/</loc>
-    <lastmod>2022-01-16T23:38:09+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/</loc>
-    <lastmod>2023-09-04T23:07:53+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
     <loc>https://www.slashinit.com/tags/assembly/</loc>
-    <lastmod>2022-01-05T22:40:06+05:30</lastmod>
+    <lastmod>2023-09-30T14:15:30+05:30</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://www.slashinit.com/categories/assembly/</loc>
-    <lastmod>2022-01-05T22:40:06+05:30</lastmod>
+    <lastmod>2023-09-30T14:15:30+05:30</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://www.slashinit.com/posts/building-qemu-from-source/</loc>
-    <lastmod>2022-01-05T22:40:06+05:30</lastmod>
+    <lastmod>2023-09-30T14:15:30+05:30</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://www.slashinit.com/tags/debugging/</loc>
-    <lastmod>2022-01-05T22:40:06+05:30</lastmod>
+    <lastmod>2023-09-30T14:15:30+05:30</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://www.slashinit.com/categories/debugging/</loc>
-    <lastmod>2022-01-05T22:40:06+05:30</lastmod>
+    <lastmod>2023-09-30T14:15:30+05:30</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://www.slashinit.com/tags/qemu/</loc>
-    <lastmod>2022-01-05T22:40:06+05:30</lastmod>
+    <lastmod>2023-09-30T14:15:30+05:30</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://www.slashinit.com/tags/virtualization/</loc>
-    <lastmod>2022-01-05T22:40:06+05:30</lastmod>
+    <lastmod>2023-09-30T14:15:30+05:30</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://www.slashinit.com/categories/virtualization/</loc>
-    <lastmod>2022-01-05T22:40:06+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/tags/arm/</loc>
-    <lastmod>2022-01-05T22:40:06+05:30</lastmod>
+    <lastmod>2023-09-30T14:15:30+05:30</lastmod>
   </url>
   
   
@@ -166,13 +180,6 @@
   
   <url>
     <loc>https://www.slashinit.com/categories/microcontrollers/</loc>
-    <lastmod>2022-01-05T22:40:06+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/tags/microprocessors/</loc>
     <lastmod>2022-01-05T22:40:06+05:30</lastmod>
   </url>
   

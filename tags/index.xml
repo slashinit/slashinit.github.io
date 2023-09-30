@@ -6,38 +6,56 @@
     <description>Recent content in Tags on www.slashinit.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Jan 2022 22:00:22 +0530</lastBuildDate><atom:link href="https://www.slashinit.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Sep 2023 15:18:08 +0530</lastBuildDate><atom:link href="https://www.slashinit.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Boot</title>
+      <title>arm</title>
+      <link>https://www.slashinit.com/tags/arm/</link>
+      <pubDate>Wed, 20 Sep 2023 15:18:08 +0530</pubDate>
+      
+      <guid>https://www.slashinit.com/tags/arm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>boot</title>
       <link>https://www.slashinit.com/tags/boot/</link>
-      <pubDate>Sun, 16 Jan 2022 22:00:22 +0530</pubDate>
+      <pubDate>Wed, 20 Sep 2023 15:18:08 +0530</pubDate>
       
       <guid>https://www.slashinit.com/tags/boot/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Linux</title>
+      <title>linux</title>
       <link>https://www.slashinit.com/tags/linux/</link>
-      <pubDate>Sun, 16 Jan 2022 22:00:22 +0530</pubDate>
+      <pubDate>Wed, 20 Sep 2023 15:18:08 +0530</pubDate>
       
       <guid>https://www.slashinit.com/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Linux-Kernel</title>
+      <title>linux-kernel</title>
       <link>https://www.slashinit.com/tags/linux-kernel/</link>
-      <pubDate>Sun, 16 Jan 2022 22:00:22 +0530</pubDate>
+      <pubDate>Wed, 20 Sep 2023 15:18:08 +0530</pubDate>
       
       <guid>https://www.slashinit.com/tags/linux-kernel/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Operating-System</title>
+      <title>microprocessors</title>
+      <link>https://www.slashinit.com/tags/microprocessors/</link>
+      <pubDate>Wed, 20 Sep 2023 15:18:08 +0530</pubDate>
+      
+      <guid>https://www.slashinit.com/tags/microprocessors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>operating-system</title>
       <link>https://www.slashinit.com/tags/operating-system/</link>
-      <pubDate>Sun, 16 Jan 2022 22:00:22 +0530</pubDate>
+      <pubDate>Wed, 20 Sep 2023 15:18:08 +0530</pubDate>
       
       <guid>https://www.slashinit.com/tags/operating-system/</guid>
       <description></description>
@@ -80,29 +98,11 @@
     </item>
     
     <item>
-      <title>ARM</title>
-      <link>https://www.slashinit.com/tags/arm/</link>
-      <pubDate>Sat, 08 Aug 2020 18:47:07 +0530</pubDate>
-      
-      <guid>https://www.slashinit.com/tags/arm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Microcontrollers</title>
       <link>https://www.slashinit.com/tags/microcontrollers/</link>
       <pubDate>Sat, 08 Aug 2020 18:47:07 +0530</pubDate>
       
       <guid>https://www.slashinit.com/tags/microcontrollers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Microprocessors</title>
-      <link>https://www.slashinit.com/tags/microprocessors/</link>
-      <pubDate>Sat, 08 Aug 2020 18:47:07 +0530</pubDate>
-      
-      <guid>https://www.slashinit.com/tags/microprocessors/</guid>
       <description></description>
     </item>
     
