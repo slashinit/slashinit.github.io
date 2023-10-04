@@ -5,34 +5,104 @@
   
   <url>
     <loc>https://www.slashinit.com/tags/arm/</loc>
-    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://www.slashinit.com/tags/boot/</loc>
-    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
   </url>
   
   
   
   <url>
-    <loc>https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2/</loc>
-    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+    <loc>https://www.slashinit.com/posts/boot-uboot-orange-pi-zero-2-using-usb-mode/</loc>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/categories/bootloaders/</loc>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://www.slashinit.com/categories/</loc>
-    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
   </url>
   
   
   
   <url>
     <loc>https://www.slashinit.com/tags/linux/</loc>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/tags/microprocessors/</loc>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/tags/operating-system/</loc>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/categories/operating-system/</loc>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/posts/</loc>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/tags/</loc>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/tags/u-boot/</loc>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/</loc>
+    <lastmod>2023-10-04T13:15:26+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/posts/building-uboot-orange-pi-zero-2/</loc>
+    <lastmod>2023-10-04T13:15:13+05:30</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://www.slashinit.com/posts/booting-linux-orange-pi-zero-2/</loc>
     <lastmod>2023-09-30T14:17:21+05:30</lastmod>
   </url>
   
@@ -48,55 +118,6 @@
   <url>
     <loc>https://www.slashinit.com/categories/linux-kernel/</loc>
     <lastmod>2023-09-30T14:17:21+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/tags/microprocessors/</loc>
-    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/tags/operating-system/</loc>
-    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/categories/operating-system/</loc>
-    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/posts/</loc>
-    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/tags/</loc>
-    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/</loc>
-    <lastmod>2023-09-30T14:17:21+05:30</lastmod>
-  </url>
-  
-  
-  
-  <url>
-    <loc>https://www.slashinit.com/categories/bootloaders/</loc>
-    <lastmod>2022-01-16T23:38:09+05:30</lastmod>
   </url>
   
   

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bootloaders on www.slashinit.com</title>
-    <link>https://www.slashinit.com/categories/bootloaders/</link>
-    <description>Recent content in bootloaders on www.slashinit.com</description>
+    <title>u-boot on www.slashinit.com</title>
+    <link>https://www.slashinit.com/tags/u-boot/</link>
+    <description>Recent content in u-boot on www.slashinit.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Oct 2023 18:44:08 +0530</lastBuildDate><atom:link href="https://www.slashinit.com/categories/bootloaders/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Oct 2023 18:44:08 +0530</lastBuildDate><atom:link href="https://www.slashinit.com/tags/u-boot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Booting u-boot on Orange Pi Zero 2 using USB boot mode</title>
       <link>https://www.slashinit.com/posts/boot-uboot-orange-pi-zero-2-using-usb-mode/</link>
@@ -23,15 +23,6 @@
       
       <guid>https://www.slashinit.com/posts/building-uboot-orange-pi-zero-2/</guid>
       <description>Steps to compile mainline u-boot from source for Orange Pi Zero 2</description>
-    </item>
-    
-    <item>
-      <title>Installing DHCP, TFTP and NFS servers - Complete network boot setup</title>
-      <link>https://www.slashinit.com/posts/installing-dhcp-tftp-nfs-network-boot/</link>
-      <pubDate>Sun, 16 Jan 2022 22:00:22 +0530</pubDate>
-      
-      <guid>https://www.slashinit.com/posts/installing-dhcp-tftp-nfs-network-boot/</guid>
-      <description>Step by step guide to install dhcp, tftp and nfs servers on a linux host</description>
     </item>
     
   </channel>
